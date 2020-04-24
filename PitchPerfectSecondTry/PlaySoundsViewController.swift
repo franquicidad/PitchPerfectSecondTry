@@ -21,7 +21,10 @@ class PlaySoundsViewController: UIViewController {
 
     var backButton : UIBarButtonItem!
     var recordedAudioURL:URL!
+    var stopButton: UIButton
     
+    stopButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
@@ -30,6 +33,9 @@ class PlaySoundsViewController: UIViewController {
     enum ButtonType: Int {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
+    
+    
+
     
     @IBAction func playSoundForButton(_ sender:UIButton){
         switch(ButtonType(rawValue: sender.tag)!) {
@@ -62,7 +68,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        configureUI(.notPlaying)
+        //configureUI(.notPlaying)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
