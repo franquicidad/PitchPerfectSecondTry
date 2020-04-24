@@ -21,9 +21,7 @@ class PlaySoundsViewController: UIViewController {
 
     var backButton : UIBarButtonItem!
     var recordedAudioURL:URL!
-    var stopButton: UIButton
     
-    stopButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
 
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
@@ -65,6 +63,8 @@ class PlaySoundsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        stopButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
